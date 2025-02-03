@@ -1,4 +1,4 @@
-import Link from 'next/link';
+// import Link from 'next/link';
 import { ShoppingBag } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -13,21 +13,22 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import ThemeToggle from './ThemeToggle';
+import { TextScrambleBasic } from './TextScramble';
 
-const links = [
-  {
-    label: 'All',
-    href: '/',
-  },
-  {
-    label: 'Shirts',
-    href: '/shirts',
-  },
-  {
-    label: 'Hats',
-    href: '/stickers',
-  },
-];
+// const links = [
+//   {
+//     label: 'All',
+//     href: '/',
+//   },
+//   {
+//     label: 'Shirts',
+//     href: '/shirts',
+//   },
+//   {
+//     label: 'Hats',
+//     href: '/stickers',
+//   },
+// ];
 
 export default function Navigation() {
   return (
@@ -37,15 +38,16 @@ export default function Navigation() {
           <div className=''>
             <ThemeToggle />
           </div>
-          <div className='flex gap-4 min-w-[120px] text-sm dark:text-[#888888]'>
+          {/* <div className='flex gap-4 min-w-[120px] text-sm dark:text-[#888888]'>
             {links.map((link) => (
               <Link key={link.href} href={link.href}>
                 {link.label}
               </Link>
             ))}
-          </div>
+          </div> */}
         </div>
-        <div className='text-2xl font-bold'>LLM DEPT.</div>
+        {/* <div className='text-2xl font-bold'>LLM DEPT.</div> */}
+        <TextScrambleBasic text='LLM DEPT.' />
         <div className='min-w-[120px] flex justify-end'>
           {/* <Button variant='outline' size='icon'>
             <ShoppingBag />

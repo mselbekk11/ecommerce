@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { formatter } from '../../../utils/helpers';
+import { TextScrambleBasic } from './TextScrambleTwo';
 
 export default function ProductCard({ product }) {
   const { handle, title } = product.node;
@@ -12,7 +13,7 @@ export default function ProductCard({ product }) {
       <div className='aspect-[3/4] w-full bg-gray-200 group-hover:opacity-75 sm:aspect-auto sm:h-96'>
         <Image
           src={url}
-          alt={altText}
+          alt={altText || `Product image of ${title}`}
           className='h-full w-full object-cover'
           width={300}
           height={300}
@@ -22,7 +23,7 @@ export default function ProductCard({ product }) {
         <h3 className='text-sm font-medium text-gray-900'>
           <Link href={`/products/${handle}`}>
             <span aria-hidden='true' className='absolute inset-0' />
-            {title}
+            <TextScrambleBasic text={title} />
           </Link>
         </h3>
         <div className='flex flex-1 flex-col justify-end'>
