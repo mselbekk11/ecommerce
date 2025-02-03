@@ -8,7 +8,7 @@ const products = [
       'Look like a visionary CEO and wear the same black t-shirt every day.',
     options: 'Black',
     imageSrc:
-      'https://tailwindui.com/plus/img/ecommerce-images/category-page-02-image-card-02.jpg',
+      'https://9gkyc4ano8.ufs.sh/f/bQmZVzMJri47QnMJbtOAElc7iBuJFZCv3djRezIMgYqk6HUW',
     imageAlt: 'Front of plain black t-shirt.',
   },
   {
@@ -20,7 +20,7 @@ const products = [
       'Look like a visionary CEO and wear the same black t-shirt every day.',
     options: 'Black',
     imageSrc:
-      'https://tailwindui.com/plus/img/ecommerce-images/category-page-02-image-card-02.jpg',
+      'https://9gkyc4ano8.ufs.sh/f/bQmZVzMJri47lSdD9wVbU1hqmBLzoyFTKwQCj9uG0pfesnJx',
     imageAlt: 'Front of plain black t-shirt.',
   },
   {
@@ -32,7 +32,7 @@ const products = [
       'Look like a visionary CEO and wear the same black t-shirt every day.',
     options: 'Black',
     imageSrc:
-      'https://tailwindui.com/plus/img/ecommerce-images/category-page-02-image-card-02.jpg',
+      'https://9gkyc4ano8.ufs.sh/f/bQmZVzMJri47QnMJbtOAElc7iBuJFZCv3djRezIMgYqk6HUW',
     imageAlt: 'Front of plain black t-shirt.',
   },
   {
@@ -44,14 +44,14 @@ const products = [
       'Look like a visionary CEO and wear the same black t-shirt every day.',
     options: 'Black',
     imageSrc:
-      'https://tailwindui.com/plus/img/ecommerce-images/category-page-02-image-card-02.jpg',
+      'https://9gkyc4ano8.ufs.sh/f/bQmZVzMJri47lSdD9wVbU1hqmBLzoyFTKwQCj9uG0pfesnJx',
     imageAlt: 'Front of plain black t-shirt.',
   },
 ];
 
 export default function ProductGrid() {
   return (
-    <div className='bg-white'>
+    <div className='bg-white dark:bg-background'>
       <div className='mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8'>
         <h2 className='sr-only'>Products</h2>
 

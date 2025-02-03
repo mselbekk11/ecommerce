@@ -12,6 +12,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
+import ThemeToggle from './ThemeToggle';
 
 const links = [
   {
@@ -30,14 +31,19 @@ const links = [
 
 export default function Navigation() {
   return (
-    <header className='w-full sticky top-0 z-50 border-b border-[#e5e7eb] bg-background'>
+    <header className='w-full sticky top-0 z-50 border-b bg-background'>
       <nav className=' mx-auto max-w-7xl flex justify-between py-4 px-4 items-center'>
-        <div className='flex gap-4 min-w-[120px] text-sm'>
-          {links.map((link) => (
-            <Link key={link.href} href={link.href}>
-              {link.label}
-            </Link>
-          ))}
+        <div className='flex gap-4 items-center'>
+          <div className=''>
+            <ThemeToggle />
+          </div>
+          <div className='flex gap-4 min-w-[120px] text-sm dark:text-[#888888]'>
+            {links.map((link) => (
+              <Link key={link.href} href={link.href}>
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
         <div className='text-2xl font-bold'>LLM DEPT.</div>
         <div className='min-w-[120px] flex justify-end'>
