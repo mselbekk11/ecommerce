@@ -1,6 +1,5 @@
 import { getProductsInCollection } from '../../lib/shopify';
 import HeroContainer from './components/HeroContainer';
-import Navigation from './components/Navigation';
 // import ProductGrid from './components/ProductGrid';
 import ProductList from './components/ProductList';
 
@@ -11,10 +10,11 @@ export default async function Home() {
 
   return (
     <div className=''>
-      <Navigation />
+      
       <HeroContainer />
       {/* <ProductGrid /> */}
       <ProductList products={products} />
+      
     </div>
   );
 }

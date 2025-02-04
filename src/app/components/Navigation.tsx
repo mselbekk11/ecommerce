@@ -48,7 +48,7 @@ export default function Navigation() {
         </div>
         {/* <div className='text-2xl font-bold'>LLM DEPT.</div> */}
         <TextScrambleBasic text='LLM DEPT.' />
-        <div className='min-w-[120px] flex justify-end'>
+        <div className=''>
           {/* <Button variant='outline' size='icon'>
             <ShoppingBag />
           </Button> */}

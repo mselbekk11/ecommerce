@@ -11,7 +11,7 @@ export function TextScrambleBasic({ text }: { text: string }) {
       setTrigger(false);
       // Small delay to ensure the animation can restart
       setTimeout(() => setTrigger(true), 100);
-    }, 5000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);

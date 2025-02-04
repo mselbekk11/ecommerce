@@ -20,7 +20,7 @@ async function ProductPage({ params }) {
     }
 
     return (
-      <div>
+      <div className=''>
         <ProductPageContent product={product} />
       </div>
     );
