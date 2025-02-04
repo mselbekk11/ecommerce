@@ -2,6 +2,7 @@
 
 import { useState, useContext } from 'react';
 import ProductOptions from './ProductOptions';
+import { Button } from '@/components/ui/button';
 
 export default function ProductForm({ product }) {
   console.log(product);
@@ -38,6 +39,12 @@ export default function ProductForm({ product }) {
   const [selectedVariant, setSelectedVariant] = useState(allVariantOptions[0]);
   const [selectedOptions, setSelectedOptions] = useState(defaultValues);
 
+  function setOptions(name, value) {
+    setSelectedOptions((prevState) => {
+      return { ...prevState, [name]: value };
+    });
+  }
+
   console.log('Final defaultValues:', defaultValues);
   console.log('variant options', allVariantOptions);
 
@@ -62,8 +69,10 @@ export default function ProductForm({ product }) {
           values={values}
           selectedOptions={selectedOptions}
           setSelectedOptions={setSelectedOptions}
+          setOptions={setOptions}
         />
       ))}
+      <Button>Add to Cart</Button>
     </div>
   );
 }

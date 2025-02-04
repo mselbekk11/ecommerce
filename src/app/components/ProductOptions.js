@@ -1,4 +1,9 @@
-export default function ProductOptions({ name, values, selectedOptions }) {
+export default function ProductOptions({
+  name,
+  values,
+  selectedOptions,
+  setOptions,
+}) {
   return (
     <fieldset>
       <legend className='text-sm font-medium'>{name}</legend>
@@ -16,6 +21,7 @@ export default function ProductOptions({ name, values, selectedOptions }) {
                 name={`option-${name}`}
                 value={value}
                 checked={checked}
+                onChange={() => setOptions(name, value)}
               />
               <div
                 className={`p-2 my-3 text-lg rounded-full block cursor-pointer mr-3 ${
