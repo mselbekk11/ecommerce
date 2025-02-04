@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import ProductOptions from './ProductOptions';
 import { Button } from '@/components/ui/button';
 
@@ -39,11 +39,26 @@ export default function ProductForm({ product }) {
   const [selectedVariant, setSelectedVariant] = useState(allVariantOptions[0]);
   const [selectedOptions, setSelectedOptions] = useState(defaultValues);
 
+  // This is what AI ADDED
   function setOptions(name, value) {
     setSelectedOptions((prevState) => {
-      return { ...prevState, [name]: value };
+      const newOptions = { ...prevState, [name]: value };
+
+      // Find the variant that matches all selected options
+      const selection = allVariantOptions.find((variant) => {
+        return Object.keys(newOptions).every(
+          (key) => variant.options[key] === newOptions[key]
+        );
+      });
+
+      if (selection) {
+        setSelectedVariant(selection);
+      }
+
+      return newOptions;
     });
   }
+  // This is what AI ADDED
 
   console.log('Final defaultValues:', defaultValues);
   console.log('variant options', allVariantOptions);
