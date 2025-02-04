@@ -1,9 +1,10 @@
 'use client';
 
 import { useState, useContext } from 'react';
+import ProductOptions from './ProductOptions';
 
 export default function ProductForm({ product }) {
-  // console.log(product);
+  console.log(product);
 
   const allVariantOptions = product.variants.edges?.map((variant) => {
     const allOptions = {};
@@ -25,19 +26,44 @@ export default function ProductForm({ product }) {
   });
 
   const defaultValues = {};
-  product.options?.map((item) => {
-    defaultValues[item.name] = item.optionValues[0].value;
-  });
+
+  // Get the first variant's selected options
+  const firstVariant = product.variants.edges[0];
+  if (firstVariant?.node?.selectedOptions) {
+    firstVariant.node.selectedOptions.forEach((item) => {
+      defaultValues[item.name] = item.value;
+    });
+  }
 
   const [selectedVariant, setSelectedVariant] = useState(allVariantOptions[0]);
   const [selectedOptions, setSelectedOptions] = useState(defaultValues);
 
-  console.log('default values', defaultValues);
+  console.log('Final defaultValues:', defaultValues);
   console.log('variant options', allVariantOptions);
 
+  // Extract unique option values
+  const options = {
+    Color: [
+      ...new Set(allVariantOptions.map((variant) => variant.options.Color)),
+    ],
+    Size: [
+      ...new Set(allVariantOptions.map((variant) => variant.options.Size)),
+    ],
+  };
+
   return (
-    <div>
-      <h1>Product Form</h1>
+    <div className='rounded-2xl p-4 shadow-lg flex flex-col w-full h-full'>
+      <h2>{product.title}</h2>
+      <span className='pb-6'>{selectedVariant.variantPrice}</span>
+      {Object.entries(options).map(([name, values]) => (
+        <ProductOptions
+          key={`key-${name}`}
+          name={name}
+          values={values}
+          selectedOptions={selectedOptions}
+          setSelectedOptions={setSelectedOptions}
+        />
+      ))}
     </div>
   );
 }
